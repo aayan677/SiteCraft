@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Rebel Tech Alliance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Orbitron:wght@400;700;900&family=Audiowide&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="EasterEgg.html" class="logo">✦ Nokia Union</a>
+        <ul class="nav-links">
+            <li><a href="NextPage.html">Math Utilities</a></li>
+            <li><a href="Enlist.html">IT Utilities</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Extras.html">Coding Problems</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>NOKIA UNION</h1>
+            <p class="subtitle">Mathematical and IT Utilities for you to enjoy</p>
+            <p class="description">
+                Come explore our collection of free tools and utilities meant for everyday use. From calculators to converters to timers, we've got you covered.
+            </p>
+            <div style="display:flex; gap:12px; margin-top:10px; justify-content:center;">
+                <a href="NextPage.html" class="hero-btn">Mathematics</a>
+                <a href="Enlist.html" class="hero-btn">IT and Computer Science</a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2v12m0 0l-6-6m6 6l6-6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="services">
+        <h2 class="section-title">Site Features</h2>
+        
+        <div class="cards-grid">
+            <div class="tech-card">
+                <div class="card-title">Coding Challenges</div>
+                <div class="card-text">Solve algorithmic problems directly in your browser. Test your code with instant Python execution powered by Pyodide.</div>
+            </div>
+
+            <div class="tech-card">
+                <div class="card-title">Developer Tools Hub</div>
+                <div class="card-text">15 essential utilities: JSON formatter, regex tester, base64 encoder, UUID generator, color converter, and more.</div>
+            </div>
+
+            <div class="tech-card">
+                <div class="card-title">Python Snippet Library</div>
+                <div class="card-text">Pre-built algorithms for sorting, searching, and mathematical operations. Copy and use instantly in your projects.</div>
+            </div>
+
+            <div class="tech-card">
+                <div class="card-title">Math Utilities</div>
+                <div class="card-text">HCF calculator, prime checker, base converter, random generators—all mathematical tools in one place.</div>
+            </div>
+
+            <div class="tech-card">
+                <div class="card-title">Fully Offline</div>
+                <div class="card-text">All tools run entirely in your browser. No internet required, no data sent to servers—complete privacy.</div>
+            </div>
+
+            <div class="tech-card">
+                <div class="card-title">Smart Problem Generator</div>
+                <div class="card-text">Dynamically generates coding challenges. Ask for specific difficulty levels and topics to get custom problems.</div>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">15</div>
+                <div class="stat-label">Developer Tools</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Python Snippets</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">20+</div>
+                <div class="stat-label">Coding Problems</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Browser-Based</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery/Portfolio Section -->
+    <section class="features" id="portfolio">
+        <h2 class="section-title">Interactive Demo - Algorithm Visualizer</h2>
+        
+        <div style="max-width: 1200px; margin: 0 auto; padding: 30px 20px;">
+            <p style="text-align: center; color: #aaa; margin-bottom: 20px;">Click to create particles • Move mouse for trails • Press SPACE for wave effect • Press C to clear</p>
+            <canvas id="demoCanvas" style="background: linear-gradient(180deg, rgba(0,51,102,0.5) 0%, rgba(0,102,153,0.3) 100%); border: 2px solid #0066cc; border-radius: 8px; cursor: crosshair; display: block; margin: 0 auto; max-width: 100%; width: 100%; height: 600px;"></canvas>
+            <p style="text-align: center; color: #666; margin-top: 15px; font-size: 13px;">Advanced particle system with physics simulation, collision detection, and multiple rendering modes</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="features" id="contact">
+        <div class="cta-section">
+            <h3>Ready to Get Started?</h3>
+            <p>Pick your path and explore what Nokia Union has to offer</p>
+            <div class="button-group" style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="Extras.html" class="btn-primary">Solve Challenges</a>
+                <a href="Enlist.html" class="btn-primary">Dev Tools</a>
+                <a href="NextPage.html" class="btn-primary">Math Tools</a>
+                <a href="About.html" class="btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Playground & Showcase -->
+    <section class="features" id="tools">
+        <h2 class="section-title">Playground &amp; Showcase</h2>
+
+        <div style="max-width: 1200px; margin: 0 auto; padding: 24px 20px;">
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                <!-- Wave Visualizer Card -->
+                <div style="background:rgba(10,25,40,0.6);padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.3);">
+                    <h4 style="color:#66e0ff;margin:0 0 8px 0">Wave Visualizer</h4>
+                    <canvas id="playCanvas" style="width:100%;height:180px;border-radius:8px;display:block;background:transparent"></canvas>
+                    <div style="display:flex;gap:8px;margin-top:8px;align-items:center;flex-wrap:wrap;">
+                        <label style="color:#ccc;font-size:12px">Amplitude</label>
+                        <input id="ampRange" type="range" min="10" max="120" value="60">
+                        <label style="color:#ccc;font-size:12px">Frequency</label>
+                        <input id="freqRange" type="range" min="1" max="20" value="10">
+                        <button id="spawnWave" class="btn" style="margin-left:auto">Spawn Particles</button>
+                    </div>
+                </div>
+
+                <!-- Tip & Color Card -->
+                <div style="background:rgba(10,25,40,0.6);padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.3);display:flex;flex-direction:column;gap:12px;">
+                    <div>
+                        <h4 style="color:#66e0ff;margin:0 0 8px 0">Tip of the Moment</h4>
+                        <div id="tipBox" style="color:#ddd;padding:10px;border-radius:6px;background:rgba(255,255,255,0.02);min-height:54px">Click "New Tip"</div>
+                        <div style="margin-top:8px;display:flex;gap:8px;">
+                            <button id="newTip" class="btn">New Tip</button>
+                            <button id="copyTip" class="btn" style="background:#2a9b3b">Copy</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 style="color:#66e0ff;margin:8px 0">Color Sampler</h4>
+                        <div style="display:flex;gap:8px;align-items:center;">
+                            <input id="colorInput" type="color" value="#00ccff" style="width:48px;height:32px;border-radius:6px;border:none;">
+                            <div id="colorHex" style="color:#ddd">#00ccff</div>
+                            <div id="colorSample" style="margin-left:auto;width:36px;height:24px;border-radius:4px;background:#00ccff;border:1px solid rgba(255,255,255,0.06)"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Snippet Runner -->
+                <div style="background:rgba(10,25,40,0.6);padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.3);">
+                    <h4 style="color:#66e0ff;margin:0 0 8px 0">Quick Snippets</h4>
+                    <select id="snippetSelect" style="width:100%;padding:8px;border-radius:6px;background:#082033;color:#ddd;border:1px solid rgba(255,255,255,0.03);">
+                        <option value="return 'Hello from the playground!';">Hello</option>
+                        <option value="return [1,2,3].map(x=>x*x);">Array squares</option>
+                        <option value="return (function(){let s='';for(let i=0;i<5;i++)s+=i+',';return s})();">Loop demo</option>
+                    </select>
+                    <div style="display:flex;gap:8px;margin-top:8px;">
+                        <button id="runSnippet" class="btn">Run</button>
+                        <button id="clearOut" class="btn" style="background:#777">Clear</button>
+                    </div>
+                    <pre id="snippetOut" style="background:rgba(255,255,255,0.03);padding:10px;border-radius:6px;color:#cfe7ff;margin-top:8px;min-height:60px;overflow:auto">Output appears here.</pre>
+                </div>
+
+                <!-- Placeholder / Future slot -->
+                <div style="background:rgba(10,25,40,0.6);padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.3);">
+                    <h4 style="color:#66e0ff;margin:0 0 8px 0">More Coming</h4>
+                    <p style="color:#ddd;margin:0;">This area will host more interactive tools — drag to reorder, or click to pin features you like.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    (function(){
+        // Playground script scoped to avoid collisions
+        const tips = [
+            'Break problems into smaller functions.',
+            'Use console.log to inspect variables quickly.',
+            'Prefer readability over clever shortcuts.',
+            'Write tests for edge cases early.'
+        ];
+
+        const tipBox = document.getElementById('tipBox');
+        const newTip = document.getElementById('newTip');
+        const copyTip = document.getElementById('copyTip');
+        newTip.addEventListener('click', ()=>{
+            const t = tips[Math.floor(Math.random()*tips.length)];
+            tipBox.textContent = t;
+        });
+        copyTip.addEventListener('click', ()=>{
+            navigator.clipboard && navigator.clipboard.writeText(tipBox.textContent);
+        });
+
+        const colorInput = document.getElementById('colorInput');
+        const colorHex = document.getElementById('colorHex');
+        const colorSample = document.getElementById('colorSample');
+        colorInput.addEventListener('input', ()=>{
+            colorHex.textContent = colorInput.value;
+            colorSample.style.background = colorInput.value;
+        });
+
+        // Snippet runner (returns value or error)
+        const snippetSelect = document.getElementById('snippetSelect');
+        const runSnippet = document.getElementById('runSnippet');
+        const clearOut = document.getElementById('clearOut');
+        const snippetOut = document.getElementById('snippetOut');
+        runSnippet.addEventListener('click', ()=>{
+            const body = snippetSelect.value;
+            try{
+                const fn = new Function(body);
+                const res = fn();
+                snippetOut.textContent = JSON.stringify(res, null, 2);
+            }catch(e){ snippetOut.textContent = 'Error: '+e.message; }
+        });
+        clearOut.addEventListener('click', ()=> snippetOut.textContent = 'Output appears here.');
+
+        // Wave visualizer
+        const canvas = document.getElementById('playCanvas');
+        if(!canvas) return;
+        const ctx = canvas.getContext('2d');
+        function resize(){ canvas.width = canvas.offsetWidth; canvas.height = 180; }
+        resize(); window.addEventListener('resize', resize);
+        const amp = document.getElementById('ampRange');
+        const freq = document.getElementById('freqRange');
+        const spawn = document.getElementById('spawnWave');
+        const particles = [];
+
+        spawn.addEventListener('click', ()=>{
+            for(let i=0;i<20;i++) particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height, vx:(Math.random()-0.5)*2, vy:(Math.random()-0.5)*2, life:1});
+        });
+
+        function draw(){
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            const t = Date.now()*0.002;
+            ctx.strokeStyle = '#0af'; ctx.lineWidth = 2; ctx.beginPath();
+            for(let x=0;x<canvas.width;x+=4){
+                const y = canvas.height/2 + Math.sin(x*freq.value*0.001 + t)*amp.value/2;
+                if(x===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+            }
+            ctx.stroke();
+
+            for(let i=particles.length-1;i>=0;i--){
+                const p = particles[i];
+                p.x += p.vx; p.y += p.vy; p.life -= 0.01;
+                ctx.fillStyle = `rgba(0,200,255,${p.life})`;
+                ctx.beginPath(); ctx.arc(p.x,p.y,3,0,Math.PI*2); ctx.fill();
+                if(p.life<=0) particles.splice(i,1);
+            }
+            requestAnimationFrame(draw);
+        }
+        draw();
+    })();
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Rebel Alliance Engineering. | May the Force be with you.</p>
+    </footer>
+
+    <script>
+        // Advanced Interactive Canvas Game with Enemy System
+        const canvas = document.getElementById('demoCanvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            const particles = [];
+            const enemies = [];
+            const explosions = [];
+            const missiles = [];
+            const connections = [];
+            
+            // Set canvas size
+            function resizeCanvas() {
+                canvas.width = canvas.offsetWidth;
+                canvas.height = 600;
+            }
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            let waveMode = false;
+            let mouseX = canvas.width / 2;
+            let mouseY = canvas.height / 2;
+            let animationRunning = false;
+            let score = 0;
+            let enemySpawnRate = 0;
+            let lastClickTime = 0;
+            const clickCooldown = 150;
+            let lives = 5;
+            let gameOver = false;
+            let lastDamageTime = 0;
+            const damageCooldown = 500;
+            let playerRotationSpeed = (Math.random() - 0.5) * 0.02;
+            let playerRotation = 0;
+            let gameStartTime = Date.now();
+            let lastScoreTime = Date.now();
+
+            function Particle(x, y, type = 'normal') {
+                this.x = x;
+                this.y = y;
+                this.px = x;
+                this.py = y;
+                this.vx = (Math.random() - 0.5) * 8;
+                this.vy = (Math.random() - 0.5) * 8;
+                this.ax = 0;
+                this.ay = 0.3;
+                this.life = 1;
+                this.maxLife = 1;
+                this.decay = Math.random() * 0.012 + 0.006;
+                this.size = Math.random() * 3 + 1.5;
+                this.type = type;
+                this.hue = 200 + Math.random() * 60;
+                this.velocity = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+            }
+
+            Particle.prototype.update = function() {
+                const vx = this.x - this.px;
+                const vy = this.y - this.py;
+                this.px = this.x;
+                this.py = this.y;
+                this.x += vx * 0.98;
+                this.y += vy * 0.98;
+                this.x += this.ax;
+                this.y += this.ay;
+                
+                if (this.x < 0) { this.x = 0; this.px = this.x + Math.random() * 2; }
+                if (this.x > canvas.width) { this.x = canvas.width; this.px = this.x - Math.random() * 2; }
+                if (this.y < 0) { this.y = 0; this.py = this.y + Math.random() * 2; }
+                if (this.y > canvas.height) { this.y = canvas.height; this.py = this.y - Math.random() * 2; }
+                
+                this.life -= this.decay;
+                this.velocity = Math.sqrt(vx * vx + vy * vy);
+            };
+
+            Particle.prototype.draw = function() {
+                const opacity = this.life * this.life;
+                ctx.fillStyle = `hsla(${this.hue}, 100%, ${50 + this.velocity}%, ${opacity})`;
+                ctx.shadowColor = `hsla(${this.hue}, 100%, 60%, ${opacity * 0.8})`;
+                ctx.shadowBlur = 10;
+                
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                
+                if (this.velocity > 2) {
+                    ctx.strokeStyle = `hsla(${this.hue}, 100%, 60%, ${opacity * 0.5})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.beginPath();
+                    ctx.moveTo(this.x, this.y);
+                    ctx.lineTo(this.x - (this.x - this.px) * 0.5, this.y - (this.y - this.py) * 0.5);
+                    ctx.stroke();
+                }
+            };
+
+            function Enemy(x, y) {
+                this.x = x;
+                this.y = y;
+                this.vx = (Math.random() - 0.5) * 2;
+                this.vy = (Math.random() - 0.5) * 2 + 0.5;
+                this.size = Math.random() * 8 + 12;
+                this.ammo = Math.floor(Math.random() * 3) + 1;
+                this.maxAmmo = this.ammo;
+                this.rotation = Math.random() * Math.PI * 2;
+                this.rotationSpeed = (Math.random() - 0.5) * 0.1;
+                this.type = Math.floor(Math.random() * 3);
+                this.lastShootTime = Date.now();
+                this.shootCooldown = 1500 + Math.random() * 500;
+            }
+
+            Enemy.prototype.update = function() {
+                // Chase the player (mouse position)
+                const dx = mouseX - this.x;
+                const dy = mouseY - this.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                const speed = 1.5;
+                
+                if (dist > 0) {
+                    this.vx = (dx / dist) * speed;
+                    this.vy = (dy / dist) * speed;
+                }
+                
+                this.x += this.vx;
+                this.y += this.vy;
+                this.rotation += this.rotationSpeed;
+                
+                // Shoot homing missiles
+                const now = Date.now();
+                if (now - this.lastShootTime > this.shootCooldown && this.ammo > 0) {
+                    for (let i = 0; i < 2; i++) {
+                        missiles.push(new Missile(this.x, this.y));
+                    }
+                    this.ammo--;
+                    this.lastShootTime = now;
+                }
+                
+                // Die when out of ammo
+                if (this.ammo <= 0) {
+                    return false;
+                }
+                
+                if (this.x < -50 || this.x > canvas.width + 50 || this.y > canvas.height + 50) {
+                    return false;
+                }
+                return true;
+            };
+
+            Enemy.prototype.draw = function() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.rotation);
+                
+                const ammoPercent = this.ammo / this.maxAmmo;
+                ctx.fillStyle = `hsla(0, 100%, ${30 + ammoPercent * 40}%, 0.8)`;
+                ctx.strokeStyle = `hsla(0, 100%, 60%, 1)`;
+                ctx.lineWidth = 2;
+                
+                if (this.type === 0) {
+                    ctx.beginPath();
+                    ctx.moveTo(0, -this.size);
+                    ctx.lineTo(this.size, this.size);
+                    ctx.lineTo(-this.size, this.size);
+                    ctx.closePath();
+                } else if (this.type === 1) {
+                    ctx.fillRect(-this.size/2, -this.size/2, this.size, this.size);
+                } else {
+                    ctx.beginPath();
+                    for (let i = 0; i < 6; i++) {
+                        const angle = (i * Math.PI / 3);
+                        const px = Math.cos(angle) * this.size;
+                        const py = Math.sin(angle) * this.size;
+                        if (i === 0) ctx.moveTo(px, py);
+                        else ctx.lineTo(px, py);
+                    }
+                    ctx.closePath();
+                }
+                
+                ctx.fill();
+                ctx.stroke();
+                
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+                ctx.font = 'bold 12px Arial';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(this.ammo, 0, 0);
+                
+                ctx.restore();
+            };
+
+            function Missile(x, y) {
+                this.x = x;
+                this.y = y;
+                this.vx = (Math.random() - 0.5) * 2;
+                this.vy = (Math.random() - 0.5) * 2;
+                this.life = 5;
+                this.maxLife = 5;
+                this.decay = 1 / 60 / this.maxLife;
+                this.size = 4;
+                this.spawnTime = Date.now();
+            }
+
+            Missile.prototype.update = function() {
+                // Home toward player
+                const dx = mouseX - this.x;
+                const dy = mouseY - this.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                const homeSpeed = 5.5;
+                
+                if (dist > 0) {
+                    this.vx = (dx / dist) * homeSpeed;
+                    this.vy = (dy / dist) * homeSpeed;
+                }
+                
+                this.x += this.vx;
+                this.y += this.vy;
+                // Use spawnTime to reliably expire after 5000ms (5s)
+                const age = Date.now() - this.spawnTime;
+                const maxMs = 5000;
+                // life is a convenience fraction (1 -> fresh, 0 -> expired)
+                this.life = Math.max(0, 1 - age / maxMs);
+                return age < maxMs;
+            };
+
+            Missile.prototype.draw = function() {
+                const opacity = this.life * this.life;
+                ctx.fillStyle = `hsla(0, 100%, 60%, ${opacity})`;
+                ctx.shadowColor = `hsla(0, 100%, 70%, ${opacity * 0.8})`;
+                ctx.shadowBlur = 8;
+                
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            };
+
+            function Explosion(x, y) {
+                this.x = x;
+                this.y = y;
+                this.life = 1;
+                this.decay = 0.05;
+                this.size = 30;
+            }
+
+            Explosion.prototype.update = function() {
+                this.life -= this.decay;
+                return this.life > 0;
+            };
+
+            Explosion.prototype.draw = function() {
+                ctx.fillStyle = `rgba(255, 100, 0, ${this.life * 0.8})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size * this.life, 0, Math.PI * 2);
+                ctx.fill();
+                
+                ctx.strokeStyle = `rgba(255, 200, 0, ${this.life * 0.6})`;
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size * this.life * 0.7, 0, Math.PI * 2);
+                ctx.stroke();
+            };
+
+            function drawPlayerShip() {
+                ctx.save();
+                ctx.translate(mouseX, mouseY);
+                
+                // Random rotation based on speed instead of time
+                playerRotationSpeed += (Math.random() - 0.5) * 0.001;
+                playerRotationSpeed = Math.max(-0.05, Math.min(0.05, playerRotationSpeed));
+                playerRotation += playerRotationSpeed;
+                ctx.rotate(playerRotation);
+                
+                const cooldownPercent = Math.max(0, (lastClickTime + clickCooldown - Date.now()) / clickCooldown);
+                const glowIntensity = 0.5 + cooldownPercent * 0.5;
+                
+                ctx.fillStyle = `rgba(0, 200, 255, ${0.7 + glowIntensity * 0.2})`;
+                ctx.strokeStyle = `rgba(0, 255, 255, ${glowIntensity})`;
+                ctx.lineWidth = 2;
+                
+                ctx.beginPath();
+                for (let i = 0; i < 5; i++) {
+                    const angle = (i * Math.PI * 2 / 5) - Math.PI / 2;
+                    const radius = i % 2 === 0 ? 15 : 8;
+                    const x = Math.cos(angle) * radius;
+                    const y = Math.sin(angle) * radius;
+                    if (i === 0) ctx.moveTo(x, y);
+                    else ctx.lineTo(x, y);
+                }
+                ctx.closePath();
+                ctx.fill();
+                ctx.stroke();
+                
+                if (cooldownPercent > 0) {
+                    ctx.strokeStyle = `rgba(0, 255, 255, ${cooldownPercent * 0.4})`;
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.arc(0, 0, 30 * cooldownPercent, 0, Math.PI * 2);
+                    ctx.stroke();
+                }
+                
+                ctx.fillStyle = 'rgba(0, 255, 255, 0.5)';
+                ctx.beginPath();
+                ctx.arc(0, 0, 5, 0, Math.PI * 2);
+                ctx.fill();
+                
+                ctx.restore();
+            }
+
+            function spawnEnemy() {
+                const x = Math.random() * (canvas.width - 40) + 20;
+                const y = -30;
+                enemies.push(new Enemy(x, y));
+            }
+
+            function checkCollisions() {
+                const now = Date.now();
+                
+                // Add 1 point per second survived
+                if (now - lastScoreTime > 1000) {
+                    score += 1;
+                    lastScoreTime = now;
+                }
+                
+                // Check player-enemy collisions
+                for (let i = enemies.length - 1; i >= 0; i--) {
+                    const dx = mouseX - enemies[i].x;
+                    const dy = mouseY - enemies[i].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (dist < 20 + enemies[i].size && now - lastDamageTime > damageCooldown) {
+                        lives--;
+                        lastDamageTime = now;
+                        explosions.push(new Explosion(mouseX, mouseY));
+                        if (lives <= 0) {
+                            gameOver = true;
+                        }
+                    }
+                }
+                
+                // Check missile-player collisions
+                for (let i = missiles.length - 1; i >= 0; i--) {
+                    const dx = mouseX - missiles[i].x;
+                    const dy = mouseY - missiles[i].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (dist < 15 && now - lastDamageTime > damageCooldown) {
+                        lives--;
+                        lastDamageTime = now;
+                        missiles.splice(i, 1);
+                        explosions.push(new Explosion(mouseX, mouseY));
+                        if (lives <= 0) {
+                            gameOver = true;
+                        }
+                    }
+                }
+            }
+
+            function animate() {
+                if (gameOver) return;
+                
+                // Solid blue background so it remains blue when enemies spawn
+                ctx.fillStyle = '#071a2b';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.shadowBlur = 0;
+
+                enemySpawnRate++;
+                if (enemySpawnRate > 80 && enemies.length < 5) {
+                    spawnEnemy();
+                    enemySpawnRate = 0;
+                }
+
+                for (let i = particles.length - 1; i >= 0; i--) {
+                    particles[i].update();
+                    particles[i].draw();
+                    if (particles[i].life <= 0) {
+                        particles.splice(i, 1);
+                    }
+                }
+
+                for (let i = enemies.length - 1; i >= 0; i--) {
+                    if (!enemies[i].update()) {
+                        enemies.splice(i, 1);
+                    } else {
+                        enemies[i].draw();
+                    }
+                }
+
+                for (let i = missiles.length - 1; i >= 0; i--) {
+                    if (!missiles[i].update()) {
+                        missiles.splice(i, 1);
+                    } else {
+                        missiles[i].draw();
+                    }
+                }
+
+                for (let i = explosions.length - 1; i >= 0; i--) {
+                    if (!explosions[i].update()) {
+                        explosions.splice(i, 1);
+                    } else {
+                        explosions[i].draw();
+                    }
+                }
+
+                checkCollisions();
+
+                if (waveMode) {
+                    const time = Date.now() * 0.001;
+                    ctx.strokeStyle = 'rgba(0, 204, 255, 0.4)';
+                    ctx.lineWidth = 2;
+                    ctx.beginPath();
+                    for (let x = 0; x < canvas.width; x += 5) {
+                        const y = canvas.height / 2 + Math.sin(x * 0.01 + time) * 60 + Math.cos(x * 0.005 + time * 0.7) * 40;
+                        if (x === 0) ctx.moveTo(x, y);
+                        else ctx.lineTo(x, y);
+                    }
+                    ctx.stroke();
+                }
+
+                drawPlayerShip();
+
+                ctx.fillStyle = 'rgba(0, 200, 255, 0.8)';
+                ctx.font = 'bold 24px Arial';
+                ctx.textAlign = 'left';
+                ctx.fillText(`Score: ${score}`, 20, 40);
+                ctx.font = '14px Arial';
+                ctx.fillText(`Lives: ${lives}`, 20, 70);
+                ctx.fillText(`Enemies: ${enemies.length}/5`, 20, 90);
+                ctx.fillText(`Missiles: ${missiles.length}`, 20, 110);
+
+                if (gameOver) {
+                    ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    // White game over text to match request
+                    ctx.fillStyle = '#ffffff';
+                    ctx.font = 'bold 48px Space Grotesk';
+                    ctx.textAlign = 'center';
+                    ctx.fillText('GAME OVER', canvas.width / 2, canvas.height / 2 - 30);
+                    ctx.font = '24px Space Grotesk';
+                    ctx.fillText(`Final Score: ${score}`, canvas.width / 2, canvas.height / 2 + 30);
+                    ctx.fillText('Press R to restart', canvas.width / 2, canvas.height / 2 + 70);
+                }
+
+                if (particles.length > 0 || enemies.length > 0 || explosions.length > 0 || missiles.length > 0 || waveMode) {
+                    animationRunning = true;
+                    requestAnimationFrame(animate);
+                } else {
+                    animationRunning = false;
+                }
+            }
+
+            canvas.addEventListener('click', (e) => {
+                const now = Date.now();
+                if (now - lastClickTime < clickCooldown) {
+                    return;
+                }
+                lastClickTime = now;
+                
+                const rect = canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                for (let i = 0; i < 25; i++) {
+                    const p = new Particle(x, y, 'burst');
+                    const angle = (i / 25) * Math.PI * 2;
+                    p.vx += Math.cos(angle) * 3;
+                    p.vy += Math.sin(angle) * 3;
+                    particles.push(p);
+                }
+
+                if (!animationRunning) animate();
+            });
+
+            canvas.addEventListener('mousemove', (e) => {
+                const rect = canvas.getBoundingClientRect();
+                mouseX = e.clientX - rect.left;
+                mouseY = e.clientY - rect.top;
+
+                if (Math.random() > 0.90) {
+                    particles.push(new Particle(mouseX, mouseY, 'trail'));
+                    if (!animationRunning) animate();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.code === 'Space') {
+                    e.preventDefault();
+                    waveMode = !waveMode;
+                    if (!animationRunning) animate();
+                }
+                if (e.code === 'KeyC') {
+                    particles.length = 0;
+                    enemies.length = 0;
+                    explosions.length = 0;
+                    missiles.length = 0;
+                    score = 0;
+                    lives = 5;
+                    gameOver = false;
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                }
+                if (e.code === 'KeyR') {
+                    particles.length = 0;
+                    enemies.length = 0;
+                    explosions.length = 0;
+                    missiles.length = 0;
+                    score = 0;
+                    lives = 5;
+                    gameOver = false;
+                    playerRotation = 0;
+                    playerRotationSpeed = (Math.random() - 0.5) * 0.02;
+                    gameStartTime = Date.now();
+                    lastScoreTime = Date.now();
+                    animationRunning = false;
+                    animate();
+                }
+            });
+
+            animate();
+        }
+    </script>
+</body>
+</html>

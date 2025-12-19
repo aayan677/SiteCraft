@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enlist - Rebel Tech Alliance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Orbitron:wght@400;700;900&family=Audiowide&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style4.css">
+    <style>
+        .panel-grid { max-width:1100px; margin:40px auto; display:grid; grid-template-columns: 1fr; gap:22px; padding:0 20px; }
+        .panel { background: rgba(0,0,0,0.36); padding:18px; border-radius:12px; border:1px solid rgba(255,255,255,0.04); }
+        .snippet-title { font-weight:700; display:flex; justify-content:space-between; align-items:center; gap:10px; }
+        .snippet-code { background:rgba(0,0,0,0.45); padding:10px; border-radius:8px; color:#fff; white-space:pre-wrap; margin-top:8px; }
+        .small { font-size:0.9rem; color:#ccc }
+        .controls { display:flex; gap:8px; margin-bottom:10px }
+        input, select, textarea { background:rgba(255,255,255,0.02); color:#fff }
+        /* Green button style for this page */
+        .panel .btn {
+            background: linear-gradient(135deg, #6bd36b, #2a9b3b);
+            border: 1px solid rgba(39,174,96,0.65);
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 8px 30px rgba(39,174,96,0.12), 0 0 60px rgba(46,204,113,0.06);
+            transition: transform 0.14s ease, box-shadow 0.14s ease, filter 0.14s ease;
+        }
+        .panel .btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 18px 80px rgba(39,174,96,0.28), 0 0 180px rgba(46,204,113,0.18);
+            filter: drop-shadow(0 0 12px rgba(46,204,113,0.28));
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">✦ Nokia Union</a>
+        <ul class="nav-links">
+            <li><a href="NextPage.html">Math Utilities</a></li>
+            <li><a href="Enlist.html">IT Utilities</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Extras.html">Coding Problems</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>IT UTILITIES</h1>
+            <p class="subtitle">Practical snippets and developer tools — everything runs in your browser</p>
+            <p class="description">Direct access to code snippets, quick utilities and testers. No sign-up, no external services required for these features.</p>
+        </div>
+    </section>
+
+    <div class="panel-grid">
+        <div class="panel" id="snippetsPanel">
+            <h2>Code Snippet Library</h2>
+            <div class="controls">
+                <input id="searchBox" placeholder="Search snippets (eg. fib, reverse, regex)" style="flex:1;padding:8px;border-radius:6px;border:none;" oninput="renderSnippets()">
+                <select id="catFilter" style="padding:8px;border-radius:6px;border:none;" onchange="renderSnippets()">
+                    <option value="all">All</option>
+                    <option value="python">Python</option>
+                    <option value="js">JavaScript</option>
+                    <option value="shell">Shell</option>
+                </select>
+            </div>
+            <div id="snippetList" style="max-height:520px;overflow:auto"></div>
+        </div>
+    </div>
+
+    <!-- Developer Tools Section (separate) -->
+    <section style="max-width:1100px;margin:18px auto;padding:0 20px;">
+        <div class="panel">
+            <h2>Developer Tools</h2>
+            <p class="small">Utilities below are grouped for quick developer tasks.</p>
+            <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:14px">
+                <!-- Left column: existing tools (kept) -->
+                <div style="display:flex;flex-direction:column;gap:10px">
+                    <!-- Prime Checker -->
+                    <div style="background:rgba(255,255,255,0.02);padding:10px;border-radius:8px">
+                        <strong>Prime Checker</strong>
+                        <input id="primeN" type="number" placeholder="Enter integer" style="width:100%;padding:8px;border-radius:6px;border:none;margin-top:8px">
+                        <div style="display:flex;gap:8px;margin-top:8px"><button class="btn" onclick="checkPrime()">Check</button><button class="btn" onclick="document.getElementById('primeOut').textContent='';document.getElementById('primeN').value=''">Clear</button></div>
+                        <pre id="primeOut" style="margin-top:8px;background:rgba(0,0,0,0.4);padding:8px;border-radius:6px;color:#ffd"></pre>
+                    </div>
+
+                    <!-- HCF -->
+                    <div style="background:rgba(255,255,255,0.02);padding:10px;border-radius:8px">
+                        <strong>HCF Calculator</strong>
+                        <div style="display:flex;gap:8px;margin-top:8px">
+                            <input id="hcfA" type="number" placeholder="a" style="flex:1;padding:8px;border-radius:6px;border:none">
+                            <input id="hcfB" type="number" placeholder="b" style="flex:1;padding:8px;border-radius:6px;border:none">
+                        </div>
+                        <div style="display:flex;gap:8px;margin-top:8px"><button class="btn" onclick="calcHcf()">Compute</button><button class="btn" onclick="document.getElementById('hcfOut').textContent='';document.getElementById('hcfA').value='';document.getElementById('hcfB').value=''">Clear</button></div>
+                        <pre id="hcfOut" style="margin-top:8px;background:rgba(0,0,0,0.4);padding:8px;border-radius:6px;color:#ffd"></pre>
+                    </div>
+
+                    <!-- Base Converter (kept) -->
+                    <div style="background:rgba(255,255,255,0.02);padding:10px;border-radius:8px">
+                        <strong>Base Converter</strong>
+                        <input id="baseVal" placeholder="Value" style="width:100%;padding:8px;border-radius:6px;border:none;margin-top:8px">
+                        <div style="display:flex;gap:8px;margin-top:8px"><input id="fromBase" placeholder="From base" style="flex:1;padding:8px;border-radius:6px;border:none"><input id="toBase" placeholder="To base" style="flex:1;padding:8px;border-radius:6px;border:none"></div>
+                        <div style="display:flex;gap:8px;margin-top:8px"><button class="btn" onclick="convertBase()">Convert</button><button class="btn" onclick="document.getElementById('baseOut').textContent='';document.getElementById('baseVal').value='';document.getElementById('fromBase').value='';document.getElementById('toBase').value=''">Clear</button></div>
+                        <pre id="baseOut" style="margin-top:8px;background:rgba(0,0,0,0.4);padding:8px;border-radius:6px;color:#ffd"></pre>
+                    </div>
+
+                    <!-- Random Hex Color Generator -->
+                    <div style="background:rgba(255,255,255,0.02);padding:10px;border-radius:8px">
+                        <strong>Random Hex Color</strong>
+                        <div style="display:flex;gap:8px;margin-top:8px"><button class="btn" onclick="genHex()">Generate</button><button class="btn" onclick="document.getElementById('hexOut').textContent=''">Clear</button></div>
+                        <pre id="hexOut" style="margin-top:8px;background:rgba(0,0,0,0.4);padding:8px;border-radius:6px;color:#ffd"></pre>
+                    </div>
+
+                    <!-- RGB <-> HEX Converter -->
+                    <div style="background:rgba(255,255,255,0.02);padding:10px;border-radius:8px">
+                        <strong>RGB ↔ HEX</strong>
+                        <input id="rgbIn" placeholder="e.g. 34,139,34" style="width:100%;padding:8px;border-radius:6px;border:none;margin-top:8px">
+                        <input id="hexIn" placeholder="#rrggbb" style="width:100%;padding:8px;border-radius:6px;border:none;margin-top:8px">
+                        <div style="display:flex;gap:8px;margin-top:8px"><button class="btn" onclick="rgbToHex()">RGB→HEX</button><button class="btn" onclick="hexToRgb()">HEX→RGB</button></div>
+                        <pre id="rgbhexOut" style="margin-top:8px;background:rgba(0,0,0,0.4);padding:8px;border-radius:6px;color:#ffd"></pre>
+                    </div>
+                </div>
+
+                <!-- Right column: 7 simpler developer tools -->
+                <div style="display:flex;flex-direction:column;gap:10px">
+                    <!-- Text Case Converter -->
+                    <div style="background:rgba(255,255,255,0.02);padding:10px;border-radius:8px">
+                        <strong>Text Case Converter</strong>
+                        <textarea id="caseIn" placeholder="Paste text" style="width:100%;padding:8px;border-radius:6px;border:none;margin-top:8px;height:72px"></textarea>
+                        <div style="display:flex;gap:8px;margin-top:8px"><button class="btn" onclick="convertCase('upper')">UPPER</button><button class="btn" onclick="convertCase('lower')">lower</button><button class="btn" onclick="convertCase('title')">Title</button></div>
+                        <pre id="caseOut" style="margin-top:8px;background:rgba(0,0,0,0.4);padding:8px;border-radius:6px;color:#ffd"></pre>
+                    </div>
+
+                    <!-- Base64 Encode/Decode -->
+                    <div style="background:rgba(255,255,255,0.02);padding:10px;border-radius:8px">
+                        <strong>Base64 Encode / Decode</strong>
+                        <input id="b64In" placeholder="Text" style="width:100%;padding:8px;border-radius:6px;border:none;margin-top:8px">
+                        <div style="display:flex;gap:8px;margin-top:8px"><button class="btn" onclick="b64Encode()">Encode</button><button class="btn" onclick="b64Decode()">Decode</button></div>
+                        <pre id="b64Out" style="margin-top:8px;background:rgba(0,0,0,0.4);padding:8px;border-radius:6px;color:#ffd;word-break:break-word"></pre>
+                    </div>
+
+                    <!-- Lorem Ipsum Generator -->
+                    <div style="background:rgba(255,255,255,0.02);padding:10px;border-radius:8px">
+                        <strong>Lorem Ipsum</strong>
+                        <input id="loremN" type="number" placeholder="Words (1-200)" style="width:100%;padding:8px;border-radius:6px;border:none;margin-top:8px">
+                        <div style="display:flex;gap:8px;margin-top:8px"><button class="btn" onclick="genLorem()">Generate</button></div>
+                        <pre id="loremOut" style="margin-top:8px;background:rgba(0,0,0,0.4);padding:8px;border-radius:6px;color:#ffd;white-space:pre-wrap"></pre>
+                    </div>
+
+                    <!-- Trim / Collapse Whitespace -->
+                    <div style="background:rgba(255,255,255,0.02);padding:10px;border-radius:8px">
+                        <strong>Trim / Collapse</strong>
+                        <textarea id="trimIn" placeholder="Paste text" style="width:100%;padding:8px;border-radius:6px;border:none;margin-top:8px;height:72px"></textarea>
+                        <div style="display:flex;gap:8px;margin-top:8px"><button class="btn" onclick="collapseWhitespace()">Collapse</button><button class="btn" onclick="document.getElementById('trimIn').value='';document.getElementById('trimOut').textContent=''">Clear</button></div>
+                        <pre id="trimOut" style="margin-top:8px;background:rgba(0,0,0,0.4);padding:8px;border-radius:6px;color:#ffd;white-space:pre-wrap"></pre>
+                    </div>
+
+                    <!-- Reverse String -->
+                    <div style="background:rgba(255,255,255,0.02);padding:10px;border-radius:8px">
+                        <strong>Reverse String</strong>
+                        <textarea id="revIn" placeholder="Enter text" style="width:100%;padding:8px;border-radius:6px;border:none;margin-top:8px;height:72px"></textarea>
+                        <div style="display:flex;gap:8px;margin-top:8px"><button class="btn" onclick="reverseString()">Reverse</button><button class="btn" onclick="document.getElementById('revIn').value='';document.getElementById('revOut').textContent=''">Clear</button></div>
+                        <pre id="revOut" style="margin-top:8px;background:rgba(0,0,0,0.4);padding:8px;border-radius:6px;color:#ffd;white-space:pre-wrap"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Rebel Alliance Tools. All features run in your browser.</p>
+    </footer>
+
+<script>
+// Snippet data (self-contained)
+const snippets = [
+    {id:'bubble', title:'Bubble Sort (Python)', lang:'python', cat:'python', desc:'In-place bubble sort (ascending).', code:`def bubble_sort(arr):\n    n = len(arr)\n    for i in range(n):\n        for j in range(0, n-i-1):\n            if arr[j] > arr[j+1]:\n                arr[j], arr[j+1] = arr[j+1], arr[j]\n    return arr`},
+    {id:'linear', title:'Linear Search (Python)', lang:'python', cat:'python', desc:'Return index of target or -1.', code:`def linear_search(arr, target):\n    for i, v in enumerate(arr):\n        if v == target:\n            return i\n    return -1`},
+    {id:'binary', title:'Binary Search (Python)', lang:'python', cat:'python', desc:'Iterative binary search (sorted array).', code:`def binary_search(arr, target):\n    lo, hi = 0, len(arr)-1\n    while lo <= hi:\n        mid = (lo+hi)//2\n        if arr[mid] == target:\n            return mid\n        if arr[mid] < target:\n            lo = mid + 1\n        else:\n            hi = mid - 1\n    return -1`},
+    {id:'rand-one', title:'Random Number (Python)', lang:'python', cat:'python', desc:'Generate a random integer in a range.', code:`import random\n\ndef rand_int(a, b):\n    return random.randint(a, b)`},
+    {id:'rand-array', title:'Random Array (Python)', lang:'python', cat:'python', desc:'Generate an array filled with random integers.', code:`import random\n\ndef rand_array(n, a, b):\n    return [random.randint(a, b) for _ in range(n)]`},
+    {id:'factorial', title:'Factorial (Python)', lang:'python', cat:'python', desc:'Iterative factorial.', code:`def factorial(n):\n    result = 1\n    for i in range(2, n+1):\n        result *= i\n    return result`},
+    {id:'merge', title:'Merge Sort (Python)', lang:'python', cat:'python', desc:'Stable merge sort (returns new list).', code:`def merge_sort(arr):\n    if len(arr) <= 1:\n        return arr\n    mid = len(arr)//2\n    left = merge_sort(arr[:mid])\n    right = merge_sort(arr[mid:])\n    res = []\n    i = j = 0\n    while i < len(left) and j < len(right):\n        if left[i] <= right[j]:\n            res.append(left[i]); i += 1\n        else:\n            res.append(right[j]); j += 1\n    res.extend(left[i:]); res.extend(right[j:])\n    return res`},
+    {id:'quick', title:'Quick Sort (Python)', lang:'python', cat:'python', desc:'In-place quicksort (Lomuto partition).', code:`def quick_sort(arr, lo=0, hi=None):\n    if hi is None: hi = len(arr)-1\n    if lo < hi:\n        p = partition(arr, lo, hi)\n        quick_sort(arr, lo, p-1)\n        quick_sort(arr, p+1, hi)\n    return arr\n\ndef partition(arr, lo, hi):\n    pivot = arr[hi]\n    i = lo\n    for j in range(lo, hi):\n        if arr[j] <= pivot:\n            arr[i], arr[j] = arr[j], arr[i]\n            i += 1\n    arr[i], arr[hi] = arr[hi], arr[i]\n    return i`},
+    {id:'palindrome', title:'Palindrome Check (Python)', lang:'python', cat:'python', desc:'Checks if string is palindrome (alphanumeric).', code:`def is_palindrome(s):\n    s = ''.join(ch.lower() for ch in s if ch.isalnum())\n    return s == s[::-1]`},
+    {id:'fib', title:'Fibonacci (Python)', lang:'python', cat:'python', desc:'Iterative Fibonacci (returns list).', code:`def fib(n):\n    if n <= 0: return []\n    res = [0,1][:n]\n    while len(res) < n:\n        res.append(res[-1] + res[-2])\n    return res`}
+];
+
+function escapeHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function renderSnippets(){
+    const q = (document.getElementById('searchBox').value||'').toLowerCase().trim();
+    const cat = document.getElementById('catFilter').value;
+    const el = document.getElementById('snippetList');
+    const filtered = snippets.filter(s => (cat==='all' || s.cat===cat) && (s.title.toLowerCase().includes(q) || s.desc.toLowerCase().includes(q) || s.code.toLowerCase().includes(q)) );
+    if(filtered.length===0){ el.innerHTML='<div style="color:#bbb;padding:8px">No snippets found.</div>'; return; }
+    el.innerHTML = filtered.map(s=>`
+        <div style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.03)">
+            <div class="snippet-title">
+                <div>${s.title} <span style="color:#ffd; font-weight:500">[${s.lang}]</span></div>
+                <div style="display:flex;gap:8px"><button class="btn" onclick='copySnippet("${s.id}")'>Copy</button><button class="btn" onclick='toggleCode("${s.id}")'>View</button></div>
+            </div>
+            <div class="small">${s.desc}</div>
+            <pre id="code-${s.id}" class="snippet-code" style="display:none">${escapeHtml(s.code)}</pre>
+        </div>
+    `).join('');
+}
+
+async function copySnippet(id){
+    const s = snippets.find(x=>x.id===id);
+    if(!s) return;
+    try{ await navigator.clipboard.writeText(s.code); alert('Snippet copied to clipboard'); }
+    catch(e){ // fallback
+        const pre = document.getElementById('code-'+id);
+        if(pre){ const range = document.createRange(); range.selectNode(pre); window.getSelection().removeAllRanges(); window.getSelection().addRange(range); document.execCommand('copy'); window.getSelection().removeAllRanges(); alert('Snippet copied (fallback)'); }
+    }
+}
+
+function toggleCode(id){
+    const el = document.getElementById('code-'+id);
+    if(!el) return;
+    el.style.display = el.style.display==='none' ? 'block' : 'none';
+}
+
+// Developer Tools: Prime check, GCD, Base converter
+function isPrime(n){
+    if(n <= 1) return false;
+    if(n <= 3) return true;
+    if(n % 2 === 0) return false;
+    const r = Math.floor(Math.sqrt(n));
+    for(let i=3;i<=r;i+=2) if(n % i === 0) return false;
+    return true;
+}
+
+function checkPrime(){
+    const v = Number(document.getElementById('primeN').value);
+    const out = document.getElementById('primeOut');
+    if(!Number.isFinite(v) || Math.floor(v) !== v){ out.textContent='Enter a valid integer'; return; }
+    out.textContent = isPrime(Math.abs(v)) ? `${v} is prime` : `${v} is not prime`;
+}
+
+function calcHcf(){
+    let a = Math.abs(Number(document.getElementById('hcfA').value));
+    let b = Math.abs(Number(document.getElementById('hcfB').value));
+    const out = document.getElementById('hcfOut');
+    if(!Number.isFinite(a) || !Number.isFinite(b)){ out.textContent='Enter two integers'; return; }
+    while(b){ const t = b; b = a % b; a = t; }
+    out.textContent = `HCF = ${a}`;
+}
+
+function convertBase(){
+    const val = (document.getElementById('baseVal').value||'').trim();
+    const from = Number(document.getElementById('fromBase').value) || 10;
+    const to = Number(document.getElementById('toBase').value) || 10;
+    const out = document.getElementById('baseOut');
+    try{
+        if(from < 2 || from > 36 || to < 2 || to > 36) { out.textContent='Bases must be between 2 and 36'; return; }
+        const n = parseInt(val, from);
+        if(Number.isNaN(n)){ out.textContent='Invalid number for the given from-base'; return; }
+        out.textContent = `Result: ${n.toString(to).toUpperCase()} (base ${to})`;
+    }catch(e){ out.textContent = 'Error: '+e.message; }
+}
+
+// --- New tool functions ---
+function testRegex(){
+    const p = document.getElementById('rePattern').value || '';
+    const f = document.getElementById('reFlags').value || '';
+    const txt = document.getElementById('reText').value || '';
+    const out = document.getElementById('reOut');
+    try{
+        const re = new RegExp(p, f);
+        const matches = txt.match(re);
+        out.textContent = matches ? `Matches: ${JSON.stringify(matches)}` : 'No match';
+    }catch(e){ out.textContent = 'Error: '+e.message; }
+}
+
+function formatJson(){
+    const raw = document.getElementById('jsonIn').value || '';
+    const out = document.getElementById('jsonOut');
+    try{ const obj = JSON.parse(raw); out.textContent = JSON.stringify(obj, null, 2); }
+    catch(e){ out.textContent = 'Invalid JSON: '+e.message; }
+}
+
+function convertTimestamp(){
+    const v = (document.getElementById('tsIn').value||'').trim();
+    const out = document.getElementById('tsOut');
+    if(!v){ out.textContent='Enter a value'; return; }
+    // number? detect seconds vs ms
+    if(/^\d+$/.test(v)){
+        const n = Number(v);
+        const date = (v.length>10) ? new Date(n) : new Date(n*1000);
+        out.textContent = `ISO: ${date.toISOString()}\nEpoch (s): ${Math.floor(date.getTime()/1000)} | ms: ${date.getTime()}`;
+        return;
+    }
+    const parsed = Date.parse(v);
+    if(isNaN(parsed)){ out.textContent='Could not parse input as date/time'; return; }
+    const d = new Date(parsed);
+    out.textContent = `ISO: ${d.toISOString()}\nEpoch (s): ${Math.floor(d.getTime()/1000)} | ms: ${d.getTime()}`;
+}
+
+function urlEncode(){ const inp = document.getElementById('urlIn').value||''; document.getElementById('urlOut').textContent = encodeURIComponent(inp); }
+function urlDecode(){ const inp = document.getElementById('urlIn').value||''; try{ document.getElementById('urlOut').textContent = decodeURIComponent(inp); }catch(e){ document.getElementById('urlOut').textContent = 'Decode error: '+e.message; } }
+
+function genUuid(){ const out = document.getElementById('uuidOut'); try{ out.textContent = crypto && crypto.randomUUID ? crypto.randomUUID() : ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g,c=> (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c/4).toString(16)); }catch(e){ out.textContent = 'Error generating UUID'; } }
+
+function slugifyText(){ const t = (document.getElementById('slugIn').value||'').toLowerCase(); const s = t.normalize('NFKD').replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,''); document.getElementById('slugOut').textContent = s; }
+
+function luminance(hex){
+    const c = hex.replace('#','');
+    if(!/^[0-9a-fA-F]{6}$/.test(c)) return NaN;
+    const r = parseInt(c.substr(0,2),16)/255;
+    const g = parseInt(c.substr(2,2),16)/255;
+    const b = parseInt(c.substr(4,2),16)/255;
+    const srgb = [r,g,b].map(v=> v<=0.03928 ? v/12.92 : Math.pow((v+0.055)/1.055, 2.4));
+    return 0.2126*srgb[0] + 0.7152*srgb[1] + 0.0722*srgb[2];
+}
+
+function checkContrast(){
+    const a = (document.getElementById('colA').value||'').trim();
+    const b = (document.getElementById('colB').value||'').trim();
+    const out = document.getElementById('colOut');
+    const la = luminance(a); const lb = luminance(b);
+    if(isNaN(la) || isNaN(lb)){ out.textContent='Enter valid 6-digit hex colors like #1a2b3c'; return; }
+    const L1 = Math.max(la, lb), L2 = Math.min(la, lb);
+    const ratio = (L1 + 0.05) / (L2 + 0.05);
+    const wcag = ratio >= 4.5 ? 'AA (normal text) pass' : (ratio >= 3 ? 'AA Large / AAA small pass' : 'Fail contrast');
+    out.textContent = `Contrast ratio: ${ratio.toFixed(2)} — ${wcag}`;
+}
+
+// --- Simple dev tool functions ---
+function convertCase(mode){
+    const txt = (document.getElementById('caseIn').value||'');
+    let out='';
+    if(mode==='upper') out = txt.toUpperCase();
+    else if(mode==='lower') out = txt.toLowerCase();
+    else if(mode==='title') out = txt.replace(/\w\S*/g, w => w.charAt(0).toUpperCase()+w.substr(1).toLowerCase());
+    document.getElementById('caseOut').textContent = out;
+}
+
+function b64Encode(){ try{ const s = document.getElementById('b64In').value||''; document.getElementById('b64Out').textContent = btoa(unescape(encodeURIComponent(s))); }catch(e){ document.getElementById('b64Out').textContent = 'Encode error'; } }
+function b64Decode(){ try{ const s = document.getElementById('b64In').value||''; document.getElementById('b64Out').textContent = decodeURIComponent(escape(atob(s))); }catch(e){ document.getElementById('b64Out').textContent = 'Decode error'; } }
+
+function genHex(){ const h = '#'+Array.from({length:6},()=>Math.floor(Math.random()*16).toString(16)).join(''); document.getElementById('hexOut').textContent = h; }
+
+function rgbToHex(){ const v = (document.getElementById('rgbIn').value||'').split(',').map(s=>Number(s.trim())); if(v.length!==3 || v.some(n=>isNaN(n)||n<0||n>255)){ document.getElementById('rgbhexOut').textContent='Enter R,G,B 0-255'; return;} const h = '#'+v.map(n=>n.toString(16).padStart(2,'0')).join(''); document.getElementById('rgbhexOut').textContent = h; }
+
+function hexToRgb(){ const h = (document.getElementById('hexIn').value||'').replace('#',''); if(!/^[0-9a-fA-F]{6}$/.test(h)){ document.getElementById('rgbhexOut').textContent='Enter 6-digit hex like #1a2b3c'; return; } const r = parseInt(h.slice(0,2),16), g = parseInt(h.slice(2,4),16), b = parseInt(h.slice(4,6),16); document.getElementById('rgbhexOut').textContent = `${r}, ${g}, ${b}`; }
+
+function genLorem(){ const n = Math.min(200, Math.max(1, parseInt(document.getElementById('loremN').value) || 20)); const words = "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua".split(' '); let out=[]; for(let i=0;i<n;i++) out.push(words[i%words.length]); document.getElementById('loremOut').textContent = out.join(' ')+'.'; }
+
+function collapseWhitespace(){ const t = (document.getElementById('trimIn').value||'').trim().replace(/\s+/g,' '); document.getElementById('trimOut').textContent = t; }
+
+function reverseString(){ const t = (document.getElementById('revIn').value||''); document.getElementById('revOut').textContent = t.split('').reverse().join(''); }
+
+// initial
+renderSnippets();
+</script>
+</body>
+</html>
